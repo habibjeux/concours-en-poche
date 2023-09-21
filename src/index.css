@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;500;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin: 0.7rem auto;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -25,15 +38,19 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  min-width: 220px;
+  background-color: white;
+  /*color: #00373e;*/
+  color: #000000;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 6vw;
   line-height: 1.1;
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
+
 }
 
 button {
@@ -55,15 +72,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.processus {
+  position: relative;
+}
+.processus::before {
+  content: '';
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000000;
+  height: 26px;
+  width: 3px;
+  margin-right: 10px;
+
 }
