@@ -3,12 +3,16 @@ import Header from '../components/Header'
 import Border from '../components/Border'
 import learn from '../assets/learn.jpg';
 import book from '../assets/book.jpg';
-import {BookOpenIcon, CalendarIcon} from '@heroicons/react/24/solid'
+import {BookOpenIcon, CalendarIcon, ClipboardDocumentCheckIcon} from '@heroicons/react/24/solid'
 import Processus from '../components/Processus';
 import Button from '../components/Button';
 import TextToggle from '../components/TextToggle';
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
+  const navigate = useNavigate();
+  const handleClick = () => navigate("/appointment");
 
   return (
     <>
@@ -17,7 +21,7 @@ function Home() {
         <h1 className='text-5xl my-8'>MES Tutorat</h1>
         <h2 className='text-xl font-[600]'>Réussissez vos Examens et Concours avec <span className='read-gold'>Brio</span> grâce à l'Assistance Exceptionnelle des <span className='read-gold'>Meilleurs Élèves du Pays !</span></h2>
         <h3 className='text-md'>✨ Brillez dans vos examens et réalisez vos rêves académiques avec notre programme de tutorat <span className='read-gold font-[600]'>réalisé par des diplômés du Lycée Scientifique d’Excellence, Prytanée, Limamou, etc.</span></h3>
-        <Button text="Rejoindre les meilleurs élèves du Sénégal" href="/appointment"/>
+        <Button text="Rejoindre les meilleurs élèves du Sénégal" onClick={handleClick} className="cursor-pointer"/>
         <div className=' my-8'>
           <div className='relative'>
             <div className='aspect-video'>
@@ -49,7 +53,7 @@ function Home() {
             <img src={learn} className='w-auto h-auto mb-3' />
             <div className="flex w-full gap-2 bg-[#f1f1ef] py-4 pl-3 pr-4 rounded-[3px]">
               <p className='flex-shrink-0'>🔥</p>
-              <a href="/appointment" className='underline'>Rejoindre les meilleurs élèves du Sénégal →</a>
+              <a onClick={handleClick} className='underline cursor-pointer'>Rejoindre les meilleurs élèves du Sénégal →</a>
           </div>
           </div>
         </section>
@@ -85,7 +89,7 @@ function Home() {
           <h3>Avez-vous des questions ? Nous sommes là pour vous aider</h3>
           <div className='flex gap-2 items-center mb-8'>
             <CalendarIcon className='w-6 h-6 text-gold' />
-            <Button text="Prendre un Rendez-Vous" href="/appointment"/>
+            <Button text="Prendre un Rendez-Vous" onClick={handleClick} className="cursor-pointer"/>
           </div>
           <img src={book} className='w-auto h-auto mb-3' />
         </section>
@@ -112,9 +116,7 @@ function Home() {
             </TextToggle>
           </div>
         </section>
-        <footer className='py-8'>Copyright © 2023 Concours en Poche - Tous droits réservés. </footer>
       </div>
-
     </>
   )
 }
